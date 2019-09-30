@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Date Night</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="./assets/css/reset.css"> -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" href="./assets/images/pcorn.jpg">
+​
+</head>
+<body>
+    <!-- Modal for inputs -->
+    <div id="myModal" class="modal fade" data-backdrop="static" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div id="modal-box" class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Date Night</h3>
+            </div>
+            <div class="modal-body">
+                <h5>Make your selections below to get a personalized date night movie and restaurant recommendation.</h5>
+                <div>
+                    <p>We are in the mood for a...</p>
+                    <div id="movie-genre">
+                        <button type="button" class="genre btn btn-secondary" value="Action">Action</button>
+                        <button type="button" class="genre btn btn-secondary" value="Comedy">Comedy</button>
+                        <button type="button" class="genre btn btn-secondary" value="Horror">Horror</button>
+                        <button type="button" class="genre btn btn-secondary" value="Drama">Drama</button>
+                        <button type="button" class="genre btn btn-secondary" value="All">Not sure</button>
+                    </div><br>
+                    <p>Our food budget is...</p>
+                    <div id="budget" class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <button type="button" class="budget btn btn-secondary" value="1">$</button>
+                        <button type="button" class="budget btn btn-secondary" value="2">$$</button>
+                        <button type="button" class="budget btn btn-secondary" value="3">$$$</button>
+                        <button type="button" class="budget btn btn-secondary" value="4">$$$$</button>
+                    </div><br>
+                    <p>We are hungry for...</p>
+                    <div id="food-genre">
+                        <button type="button" class="food btn btn-secondary" value="italian">Italian</button>
+                        <button type="button" class="food btn btn-secondary" value="asian,asianfusion,panasian">Asian</button>
+                        <button type="button" class="food btn btn-secondary" value="american,newamerican,tradamerican">American</button>
+                        <button type="button" class="food btn btn-secondary" value="mexican,newmexican">Mexican</button>
+                        <button type="button" class="food btn btn-secondary" value="restaurant">Not sure</button>
+                    </div><br>
+                    <label>Zip code:&nbsp</label><input id="zip" type="text">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="submit" type="button" class="btn btn-success">Get My Date Night!</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal For Selected Movie Info -->
+    <div id="movieModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div id="modal-box" class="modal-content">
+                <div class="modal-body">
+                    <div>
+                        <img id="movieModalImg" src="">
+                    </div>
+                    <div>
+                        <h2 id="movieModalTitle"></h2>
+                    </div>
+                    <div>
+                        <p><strong>Plot:&nbsp</strong><span id="movieModalPlot"></span></p>
+                    </div>
+                    <div>
+                        <p><strong>Rotten Tomatoes Rating:&nbsp</strong><span id="movieModalRating"></span></p>
+                    </div>
+                    <div>
+                        <p><strong>Movie Rating:&nbsp</strong><span id="movieModalMpaaRating"></span></p>
+                    </div>
+                    <div>
+                        <p><strong>Showtimes:</strong></p>
+                        <h5 id="theater">Regal Willoughby</h5>
+                        <p id="movieShowtimes"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="submitMovie" type="button" class="btn btn-secondary">Select This Movie</button>
+                        <button id="exit" class="close" data-dismiss="modal" type="button" class="btn">Keep Looking</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal For Selected Food Info -->
+    <div id="foodModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div id="modal-box" class="modal-content">
+                <div class="modal-body">
+                    <div>
+                        <img id="foodModalImg" src="">
+                    </div>
+                    <div>
+                        <h2 id="foodModalTitle"></h2>
+                    </div>
+                    <div>
+                        <p><strong>Address:&nbsp</strong><span id="foodModalAddress"></span>
+                    </div>
+                    <div>
+                        <p><strong>Price:&nbsp</strong><span id="foodModalPrice"></span></p>
+                    </div>
+                    <div>
+                        <p><strong>Phone Number:&nbsp</strong><span id="foodModalPhone"></span></p>
+                    </div>
+                    <div>
+                        <p><strong>Yelp Reviews:&nbsp</strong><span id="foodModalYelp" ></span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="submitFood" type="button" class="btn btn-secondary">Select This Restaurant</button>
+                        <button id="exit" class="close" data-dismiss="modal" type="button" class="btn">Keep Looking</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- header -->
+    <div class="header">
+        <h1>Date Night</h1>
+        <h2>Make your movie, then restaurant selections below.</h2>
+    </div>
+    <!-- Main Div for content -->
+    <div class="container-fluid">
+        <!-- Main Div row for content -->
+        <div class="row first">
+            <!-- Selection section -->
+            <div id="selectionCardColumn" class="col-lg-4">
+                <div id="selection" class="card-columns rounded">
+                </div>
+            </div>
+            <!-- Card column section -->
+            <div id="optionsCardColumn" class="col-lg-8">
+                <div id="options" class="card-columns rounded container-fluid">
+                 </div>
+            </div>
+        </div>
+    </div>    
+    <script src="./assets/javascript/app.js"></script>
+</body>
+    
+</html>

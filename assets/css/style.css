@@ -1,0 +1,106 @@
+#modal-box {
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 15px;
+    color: white;
+}
+
+p {
+    margin-bottom: 2px;
+}
+
+.btn-primary{
+    background-color:darkgray; 
+}
+
+.btn-primary:hover{
+    color:red; 
+    font-weight: bolder
+}
+
+.btn-secondary:hover{
+    color:red; 
+    font-weight: bolder;
+    text-shadow: 2px 2px 5px white;
+    }
+    
+.fade {
+    opacity: 1;
+    -webkit-transition: opacity 1s linear;
+    transition: opacity 1s linear;
+}
+
+.header {
+    padding: 30px;
+    margin-bottom: 10px;
+    height: 150px;
+    width: 100%;
+    position: relative;
+    animation-name: headFade;
+    animation-duration: 3s;  
+    animation-fill-mode: forwards;
+}
+
+@keyframes headFade {
+    to {background-color: rgb(124, 24, 24);}
+  }
+
+#selection {
+    padding: 10px;
+}
+​
+#options {
+    padding: 10px;
+}
+
+#foodModalImg{
+    height: 100%;
+    width: 300px;
+    border-radius: 25px;
+}
+
+#movieModalImg{
+    height: 100%;
+    width: 300px;
+    border-radius: 25px;
+}
+
+.movieCard, .foodCard{
+    box-shadow: 10px 10px 5px grey;
+    text-align: center;
+}
+
+.selectedMovie .card-img-top {
+    width: 50%;
+}
+
+.selectedFood .card-img-top {
+    width: 50%;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
+    background-color: rgb(211, 72, 67);
+}
+
+.selectedMovie{
+    box-shadow: 5px 5px 10px darkseagreen;
+    text-align: center;
+    width: 200px;
+    height: 100%;
+}
+
+.selectedFood{
+    box-shadow: 5px 5px 10px darkseagreen;
+    text-align: center;
+    width: 200px;
+    height: 100%;
+} 
