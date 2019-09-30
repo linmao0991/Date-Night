@@ -299,8 +299,14 @@ function ajaxCallPoster(omdbQueryURL, movieID){
         url: omdbQueryURL,
         method: "GET",
     }).then(function(response){
-        $("#"+movieID+"").attr("src",response.Poster);
-        $("#"+movieID+"").parent().attr("data-score", response.imdbRating)
+        console.log(response.Poster);
+        if (typeof response.Poster === 'undefined'){
+            $("#"+movieID+"").attr("src","./assets/images/stockPoster.jpg");
+            $("#"+movieID+"").parent().attr("data-score", response.imdbRating)
+        }else{
+            $("#"+movieID+"").attr("src",response.Poster);
+            $("#"+movieID+"").parent().attr("data-score", response.imdbRating)
+        }
     });
 }
 
