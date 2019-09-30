@@ -107,7 +107,7 @@ function ajaxCallMovie (zipCode, radius){
     var mm = String(today.getMonth() + 1).padStart(2, '0');
     var yyyy = today.getFullYear();
     var searchDate = yyyy+"-"+mm+"-"+dd;
-    var queryURL = "http://data.tmsapi.com/v1.1/movies/showings?startDate="+searchDate+"&zip="+zipCode+"&radius="+radius+"&api_key="+tmsapoApiKey+"";
+    var queryURL = "https://data.tmsapi.com/v1.1/movies/showings?startDate="+searchDate+"&zip="+zipCode+"&radius="+radius+"&api_key="+tmsapoApiKey+"";
     $.ajax({
         url: queryURL,
         method: "GET"
