@@ -432,7 +432,9 @@ function createFoodCard(){
         //If there are still no results for restaurant at maximum radius, change category to all.
         if( searchRadius >= 40000){
             alert("No results for "+foodCategory+". Close this window to show all food results.")
+            searchRadius = 16000;
             foodCategory = "restaurant";
+            foodBudget = [1,2,3,4];
             foodAjaxCall();
         }else{
         // Add a mile to the search radius then call the api again
