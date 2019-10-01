@@ -1,7 +1,3 @@
-// Mao Lin Yelp API Key: oy6hhHsq3Rftgnl-vLTLO0vfP8VKnoGjq4a_AhrqhbfG4Q3Mothi8_PzIv_GmBntG9J0gBmx04lCPmhZi2xn4mJW_CRHtohDxdhGOoUS4GGErey7MesWAQLgAYWBXXYx
-// Mao Lin tmsapi (movie theater api): jz7axh5rkajhpchqau3hu8wh
-// Abby tmsapi : gu6dchs6ur8aejc2hd6tms43
-// Mao Lin omdb API: 850f1e7
 var yelpApiKey = "oy6hhHsq3Rftgnl-vLTLO0vfP8VKnoGjq4a_AhrqhbfG4Q3Mothi8_PzIv_GmBntG9J0gBmx04lCPmhZi2xn4mJW_CRHtohDxdhGOoUS4GGErey7MesWAQLgAYWBXXYx";
 var omdbApiKey = "850f1e7";
 var tmsapoApiKey = "gu6dchs6ur8aejc2hd6tms43";
